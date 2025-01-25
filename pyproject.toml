@@ -1,0 +1,15 @@
+[project]
+name = "edks-0003"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.35.80",
+    "delta-spark>=3.3.0",
+    "faker>=33.1.0",
+    "fastparquet>=2024.11.0",
+    "jupyterlab>=4.3.3",
+    "pandas>=2.2.3",
+    "pyspark>=3.5.4",
+]

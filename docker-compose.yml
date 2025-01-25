@@ -1,0 +1,21 @@
+services:
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+    environment:
+      MINIO_ACCESS_KEY: MinioAdmin123
+      MINIO_SECRET_KEY: MinioAdmin123
+    command: server /data
+
+  jupyter:
+    image: jupyter/pyspark-notebook:python-3.11
+    ports:
+      - "8888:8888"
+      - "4050:4050"
+    environment:
+      JUPYTER_PASSWORD: password
+    volumes:
+      - ./src:/home/jovyan/work
+    depends_on:
+      - minio
